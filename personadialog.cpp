@@ -19,7 +19,8 @@ void PersonaDialog::on_buttonBox_accepted()
     QString apellido = ui->inApellido->text();
     QString telefono = ui->inTelefono->text();
     QString email = ui->inEmail->text();
-    this->m_persona = new Persona(nombre, apellido, telefono, email);
+    QDate nacimiento = ui->inDateEdit->date();
+    this->m_persona = new Persona(nombre, apellido, telefono, email, nacimiento);
     accept();
 }
 
@@ -33,4 +34,5 @@ Persona *PersonaDialog::persona() const
 {
     return m_persona;
 }
+
 

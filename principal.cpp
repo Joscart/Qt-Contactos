@@ -11,9 +11,9 @@ Principal::Principal(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("Agenda telefónica");
     // Configurar la tabla
-    ui->tblLista->setColumnCount(4);
+    ui->tblLista->setColumnCount(5);
     QStringList titulo;
-    titulo << "Nombre" << "Apellido" << "Teléfono" << "E-mail";
+    titulo << "Nombre" << "Apellido" << "Teléfono" << "E-mail" << "Edad";
     ui->tblLista->setHorizontalHeaderLabels(titulo);
     // Leer desde el archivo
     cargarContactos();
@@ -45,7 +45,7 @@ void Principal::on_btnAgregar_clicked()
     ui->tblLista->setItem(fila, APELLIDO, new QTableWidgetItem(p->apellido()));
     ui->tblLista->setItem(fila, TELEFONO, new QTableWidgetItem(p->telefono()));
     ui->tblLista->setItem(fila, EMAIL, new QTableWidgetItem(p->email()));
-
+    ui->tblLista->setItem(fila, EDAD, new QTableWidgetItem(&""[(new QDate(0,0,p->nacimiento().daysTo(QDate::currentDate())))->year()]));
 }
 
 
