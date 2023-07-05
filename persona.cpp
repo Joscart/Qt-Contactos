@@ -35,7 +35,16 @@ const QString &Persona::email() const
     return m_email;
 }
 
-const QDate &Persona::nacimiento() const
+int Persona::nacimiento() const
 {
-    return m_nacimiento;
+    QDate aux;
+    aux = aux.addDays(m_nacimiento.daysTo(QDate::currentDate())-1);
+    return aux.year();
 }
+
+const QString &Persona::nacimientoToString() const
+{
+    return m_nacimiento.toString("ddMMyyyy");
+}
+
+

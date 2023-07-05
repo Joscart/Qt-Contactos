@@ -45,7 +45,7 @@ void Principal::on_btnAgregar_clicked()
     ui->tblLista->setItem(fila, APELLIDO, new QTableWidgetItem(p->apellido()));
     ui->tblLista->setItem(fila, TELEFONO, new QTableWidgetItem(p->telefono()));
     ui->tblLista->setItem(fila, EMAIL, new QTableWidgetItem(p->email()));
-    ui->tblLista->setItem(fila, EDAD, new QTableWidgetItem(&""[(new QDate(0,0,p->nacimiento().daysTo(QDate::currentDate())))->year()]));
+    ui->tblLista->setItem(fila, EDAD, new QTableWidgetItem();
 }
 
 

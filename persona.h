@@ -15,7 +15,8 @@ public:
     const QString &apellido() const;
     const QString &telefono() const;
     const QString &email() const;
-    const QDate &nacimiento() const;
+    int nacimiento() const;
+    const QString &nacimientoToString() const;
 
 signals:
 
